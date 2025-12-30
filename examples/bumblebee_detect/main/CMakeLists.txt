@@ -1,6 +1,9 @@
-set(src_dirs        ./)
+set(src_dirs        ./
+                    ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
-set(include_dirs    ./)
+set(include_dirs    ./
+                    ${CMAKE_CURRENT_SOURCE_DIR}/include
+                    ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
 set(requires        bumblebee_detect)
 
@@ -14,4 +17,10 @@ endif()
 
 set(embed_files     "bumblebee.jpg")
 
-idf_component_register(SRC_DIRS ${src_dirs} INCLUDE_DIRS ${include_dirs} REQUIRES ${requires} EMBED_FILES ${embed_files})
+idf_component_register(
+    SRC_DIRS ${src_dirs}
+    INCLUDE_DIRS ${include_dirs}
+    REQUIRES ${requires}
+    PRIV_REQUIRES fatfs
+    EMBED_FILES ${embed_files}
+)

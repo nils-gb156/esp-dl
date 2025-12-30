@@ -5,9 +5,12 @@
 | ESP32-S3 | ![alt text][supported] | ![alt text][supported] |
 | ESP32-P4 | ![alt text][supported] | ![alt text][supported] |
 
+
 # Bumblebee Detect Example
 
-A simple image inference example. In this example, we use ``bumblebee.jpg`` for test. With default setting(iou=0.7, conf=0.6), the detection result before quantization is shown below:
+Dieses Beispiel nimmt automatisch alle 2 Sekunden ein Foto mit der Kamera auf, wendet das Bumblebee-Detektionsmodell darauf an und speichert das Bild mit den erkannten Ergebnissen (Bounding Boxen) auf der SD-Karte. Die Erkennung läuft dabei kontinuierlich, das Bild wird jeweils als JPEG abgelegt.
+
+Mit den Standardeinstellungen (iou=0.7, conf=0.35) sieht das Detektionsergebnis vor der Quantisierung wie folgt aus:
 
 ![](./img/bumblebee_224_224.jpg)
 
